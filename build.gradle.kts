@@ -1,5 +1,5 @@
-group='io.github.yusaka39'
-version='0.0.1'
+group="io.github.yusaka39"
+version="0.0.1"
 
 buildscript {
     repositories {
