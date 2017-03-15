@@ -8,13 +8,13 @@ buildscript {
     }
 }
 
-
 apply {
     plugin("java")
     plugin("kotlin")
 }
 
 repositories {
+    mavenCentral()
     jcenter()
 }
 
@@ -22,8 +22,12 @@ repositories {
 
 main.kotlin.srcDirs += 'src/main/myKotlin'
 }
+
 */
 
 dependencies {
+
+    compile("org.jetbrains.kotlin:kotlin-stdlib:1.1.0")
+
     testCompile("junit:junit:4.12")
 }
