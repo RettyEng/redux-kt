@@ -1,3 +1,6 @@
+group='io.github.yusaka39'
+version='0.0.1'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -11,6 +14,7 @@ buildscript {
 apply {
     plugin("java")
     plugin("kotlin")
+    plugin("maven")
 }
 
 repositories {
