@@ -1,4 +1,4 @@
-package io.github.yusaka39.reduxkt
+package me.retty.reduxkt
 
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.properties.Delegates

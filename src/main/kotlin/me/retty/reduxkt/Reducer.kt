@@ -1,7 +1,7 @@
-package io.github.yusaka39.reduxkt
+package me.retty.reduxkt
 
-import io.github.yusaka39.reduxkt.internal.utils.comp
-import io.github.yusaka39.reduxkt.internal.utils.curry
+import me.retty.reduxkt.internal.utils.comp
+import me.retty.reduxkt.internal.utils.curry
 
 /**
  * Created by yusaka on 3/14/17.

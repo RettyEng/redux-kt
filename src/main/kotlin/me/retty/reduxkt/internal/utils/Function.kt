@@ -1,4 +1,4 @@
-package io.github.yusaka39.reduxkt.internal.utils
+package me.retty.reduxkt.internal.utils
 
 /**
  * Created by yusaka on 3/15/17.

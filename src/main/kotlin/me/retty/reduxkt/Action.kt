@@ -1,4 +1,4 @@
-package io.github.yusaka39.reduxkt
+package me.retty.reduxkt
 
 import kotlin.properties.Delegates
 
