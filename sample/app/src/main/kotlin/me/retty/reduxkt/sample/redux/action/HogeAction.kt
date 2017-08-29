@@ -1,4 +1,4 @@
-package me.retty.reduxkt.sample.redux.action.creatorproducer
+package me.retty.reduxkt.sample.redux.action
 
 import me.retty.reduxkt.Action
 

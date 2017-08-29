@@ -14,12 +14,10 @@ buildscript {
     }
 }
 
-//dependencies {
-//    compile project(":redux-kt")
-//}
 allprojects {
     repositories {
         jcenter()
+        mavenLocal()
     }
 }
 

@@ -1,7 +1,1 @@
-include ':redux-kt', ':app'
-project(':redux-kt').name = 'redux-kt'
-project(':redux-kt').projectDir = new File(settingsDir, '../')
-project(':redux-kt').buildFileName = 'build.gradle'
-
-rootProject.name = 'sample'
-rootProject.buildFileName = 'build.gradle'
+include ':app'
