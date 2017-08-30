@@ -30,8 +30,7 @@
                 android:id="@+id/EditActivity_edit_text_memo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/edit_activity_name_memo"
-                android:inputType="text" />
+                android:hint="@string/edit_activity_name_memo"/>
     </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>

@@ -5,7 +5,7 @@ package me.retty.reduxkt.sample.data
  */
 data class Todo(
         val id: Long,
-        val title: String,
+        val name: String,
         val memo: String,
         val isDone: Boolean
 )

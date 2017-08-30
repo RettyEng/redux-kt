@@ -7,6 +7,8 @@ import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.TextView
 import me.retty.reduxkt.sample.extend.findAndCast
+import me.retty.reduxkt.sample.redux.action.creatorproducer.TodoActionCreatorProducer
+import me.retty.reduxkt.sample.redux.store.Store
 import kotlin.properties.Delegates
 
 /**
@@ -20,6 +22,11 @@ class ListItemView : LinearLayout {
 
     init {
         LayoutInflater.from(this.context).inflate(R.layout.view_list_item, this)
+        this.findAndCast<CheckBox>(R.id.ListItemView_checkbox).setOnClickListener {
+            this.id?.let {
+                Store.dispatch(TodoActionCreatorProducer.produceToggleCompletedTodoAction(this.id!!))
+            }
+        }
     }
 
     var textView by Delegates.observable("") { _, _, new ->
@@ -31,4 +38,6 @@ class ListItemView : LinearLayout {
         this.findAndCast<CheckBox>(
                 me.retty.reduxkt.sample.R.id.ListItemView_checkbox).isChecked = new
     }
+
+    var id: Long? = null
 }

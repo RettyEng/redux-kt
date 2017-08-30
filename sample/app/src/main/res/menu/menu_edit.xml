@@ -8,7 +8,7 @@
             android:id="@+id/action_done"
             android:title="@string/action_done"
             android:orderInCategory="100"
-            app:showAsAction="never"
-            android:icon="@drawable/ic_done_black_24dp"
+            app:showAsAction="always"
+            android:icon="@drawable/ic_done_white_24dp"
             />
 </menu>

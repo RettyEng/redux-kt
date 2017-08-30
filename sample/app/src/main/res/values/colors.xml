@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="already_done">@color/colorAccent</color>
+    <color name="not_completed">#33111111</color>
 </resources>
