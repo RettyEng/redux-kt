@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="MultiLineTextStyle">
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+</resources>

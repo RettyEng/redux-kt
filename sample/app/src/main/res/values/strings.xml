@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">sample</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_done">Done</string>
+
+    <string name="edit_activity_name_name">Name</string>
+    <string name="edit_activity_name_memo">Memo</string>
+</resources>
