@@ -120,7 +120,7 @@ store.dispatch(PostTextAction("foobar"))
 
 ## Sample apps
 
-[incoming](sample/README.md)
+[README](sample/README.md) of the sample.
 
 # Contributing
 
