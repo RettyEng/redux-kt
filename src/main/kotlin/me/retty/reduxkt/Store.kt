@@ -1,5 +1,8 @@
 package me.retty.reduxkt
 
+import io.reactivex.Observable
+import io.reactivex.subjects.BehaviorSubject
+import java.util.*
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.properties.Delegates
 
@@ -17,12 +20,18 @@ class Store<T : StateType>(initialState: T, private val delegate: StoreDelegate<
                 override fun getMiddlewares(): List<Middleware<T>> = middlewares
             })
 
+    //Plain state interface
     var state: T by Delegates.observable(initialState) { _, old, new ->
         subscribers.forEach { it(old, new) }
     }
     private set
 
     private var subscribers: List<StateSubscriber<T>> = emptyList()
+
+    //RxJava state interface
+    private val stateSubject: BehaviorSubject<T> = BehaviorSubject.createDefault(initialState)
+    val observable: Observable<T> = stateSubject.hide()
+
     private val lock = ReentrantLock()
 
     private val withLock: Middleware<T> = { _ ->
@@ -55,7 +64,9 @@ class Store<T : StateType>(initialState: T, private val delegate: StoreDelegate<
 
     private val _dispatch: (Action) -> Unit = (this.delegate.getMiddlewares() + withLock).fold(
             { action: Action ->
-                this.state = this.delegate.getReducer()(action, this.state)
+                val newState = this.delegate.getReducer()(action, this.state)
+                this.state = newState
+                this.stateSubject.onNext(newState)
             }
     ) { acc, middleWare ->
         middleWare(this.state)(acc)
