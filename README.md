@@ -13,6 +13,7 @@ Redux-kt is a simple [Redux](http://redux.js.org/)-like implementation for kotli
     * [Maven](#maven)
   - [Coding](#coding)
   - [Sample apps](#sample-apps)
+  - [RxJava Bindings](#rxjava-bindings)
 * [Contributing](#contributing)
   - [Building](#building)
   - [Using debug build](#using-debug-build)
@@ -121,6 +122,10 @@ store.dispatch(PostTextAction("foobar"))
 ## Sample apps
 
 [README](sample/README.md) of the sample.
+
+## RxJava bindings
+
+[README](redux-kt-rxjava-bindings/README.md)
 
 # Contributing
 

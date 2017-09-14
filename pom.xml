@@ -5,16 +5,16 @@
   <groupId>com.github.rettyeng.redux-kt</groupId>
   <artifactId>redux-kt</artifactId>
   <packaging>pom</packaging>
-  
-  <version>0.0.2-SNAPSHOT</version>
-  <name>redux-kt</name>
-  <url>https://github.com/rettyeng/redux-kt</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <kotlin.version>1.1.4-3</kotlin.version>
   </properties>
   
+  <version>0.0.2-SNAPSHOT</version>
+  <name>redux-kt</name>
+  <url>https://github.com/rettyeng/redux-kt</url>
+
   <dependencies>
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
@@ -27,6 +27,20 @@
     <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
     
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
         <groupId>org.jetbrains.kotlin</groupId>
@@ -52,5 +66,6 @@
   </build>
   <modules>
     <module>redux-kt-core</module>
+    <module>redux-kt-rxjava-bindings</module>
   </modules>
 </project>
