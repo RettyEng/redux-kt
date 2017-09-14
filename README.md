@@ -48,7 +48,7 @@ Open `build.gradle` of the target project and insert redux-kt as a dependency of
 
 ```groovy
 dependencies {
-    compile 'com.github.rettyeng:redux-kt:0.0.1-4'
+    compile 'com.github.rettyeng.redux-kt:redux-kt-core:0.0.2'
 }
 ```
 
@@ -76,9 +76,9 @@ Add redux-kt as a dependency of the project.
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.github.rettyeng</groupId>
-        <artifactId>redux-kt</artifactId>
-        <version>0.0.1-4</version>
+        <groupId>com.github.rettyeng.redux-kt</groupId>
+        <artifactId>redux-kt-core</artifactId>
+        <version>0.0.2</version>
     </dependency>
 </dependencies>
 ```
@@ -128,10 +128,10 @@ Feel free to report bugs, to create issues, or to create PRs.
 
 ## Building
 
-Use gradle to create jar.
+Install maven and run following command.
 
 ```sh
-./gradlew assemble
+mvn package
 ```
 
 ## Using debug build
@@ -143,7 +143,7 @@ Import [jar](#building) into your project as a library or install a snapshot to 
 Use maven-plugin to install.
 
 ```sh
-./gradlew install
+mvn install
 ```
 
 ### Use the version installed into a local repository
