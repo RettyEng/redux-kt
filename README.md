@@ -162,7 +162,7 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.github.rettyeng:redux-kt:0.0.1-SNAPSHOT'
+    compile 'com.github.rettyeng.redux-kt:redux-kt-core:0.0.2-SNAPSHOT'
 }
 ```
 
@@ -171,9 +171,9 @@ dependencies {
 ```
 <dependencies>
     <dependency>
-        <groupId>com.github.rettyeng</groupId>
-        <artifactId>redux-kt</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>com.github.rettyeng.redux-kt</groupId>
+        <artifactId>redux-kt-core</artifactId>
+        <version>0.0.2-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
