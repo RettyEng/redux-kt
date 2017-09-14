@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    compile 'com.github.rettyeng:redux-kt:0.0.1-SNAPSHOT'
+    compile 'com.github.rettyeng.redux-kt:redux-kt-core:0.0.2-SNAPSHOT'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
