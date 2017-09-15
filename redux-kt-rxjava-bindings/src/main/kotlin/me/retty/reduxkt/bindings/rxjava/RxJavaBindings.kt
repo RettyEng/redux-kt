@@ -19,7 +19,7 @@ object RxJavaBindings {
             })
 
     fun <T: StateType> newStore(initialState: T, delegate: StoreDelegate<T>): Store<T> {
-        val subject = BehaviorSubject.createDefault(initialState)
+        val fields = Fields(BehaviorSubject.createDefault (initialState))
         var store: Store<T>? = null
 
         store = Store(initialState, object : StoreDelegate<T> {
@@ -30,7 +30,7 @@ object RxJavaBindings {
                     { dispatcher: (Action) -> Unit ->
                         { action: Action ->
                             dispatcher(action)
-                            subject.onNext(store!!.state)
+                            fields.subject.onNext(store!!.state)
                         }
                     }
                 }
@@ -38,19 +38,21 @@ object RxJavaBindings {
             }
         })
 
-        subjectStore[store] = subject
+        fieldsStore[store] = fields
         return store
     }
 }
 
-private val subjectStore: MutableMap<Store<*>, BehaviorSubject<*>> = WeakHashMap()
+private class Fields<T: StateType>(val subject: BehaviorSubject<T>) {
+    val observable: Observable<T> by  lazy {
+        this.subject.hide()
+    }
+}
 
-private var <T: StateType> Store<T>.subject: BehaviorSubject<T>?
-    @Suppress("unchecked_cast")
-    get() = subjectStore[this] as? BehaviorSubject<T>
-    set(value) { subjectStore[this] = value ?: return }
+private val fieldsStore: MutableMap<Store<*>, Fields<*>> = WeakHashMap()
 
 val <T: StateType> Store<T>.observable: Observable<T>
-    get() = this.subject?.hide() ?: throw IllegalStateException(
+    @Suppress("unchecked_cast")
+    get() = (fieldsStore[this] as? Fields<T>)?.observable ?: throw IllegalStateException(
             "Calling accessor of observable for store that is not prepare for RxJava binding." +
             " Use RxJavaBindings#newStore to create instance of Store")
